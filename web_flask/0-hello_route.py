@@ -6,10 +6,8 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-
-
 def hello_hbnb():
-    """ a function that prints hello hbnb at the root"""
+    """ a function that prints hello `hbnb at the root"""
     return "Hello HBNB!"
 
 
