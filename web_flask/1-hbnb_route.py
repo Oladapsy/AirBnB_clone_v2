@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """a script that starts a flask web application"""
 from flask import Flask
 
@@ -9,6 +8,11 @@ app = Flask(__name__)
 def hello_hbnb():
     """ a function that prints hello `hbnb at the root"""
     return "Hello HBNB!"
+
+@app.route('/hbnb', strict_slashes=False)
+def hbnb():
+    """ a function that prints hbnb to the path /hbnb"""
+    return "HBNB"
 
 
 if __name__ == "__main__":
