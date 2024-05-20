@@ -7,12 +7,13 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """ a function that prints hello `hbnb at the root"""
+    """a function that prints hello `hbnb at the root"""
     return "Hello HBNB!"
+
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """ a function that prints hbnb to the path /hbnb"""
+    """Display HBNB at /hbnb"""
     return "HBNB"
 
 
