@@ -9,6 +9,7 @@ sudo mkdir -p /data/web_static/releases/test/
 sudo chown -R ubuntu:ubuntu /data/
 echo "Holberton School" > /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test /data/web_static/current
+sudo chown -R ubuntu:ubuntu /data/
 
 sudo printf %s "server {
     listen 80;
