@@ -7,16 +7,8 @@ sudo apt-get install -y nginx
 sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
 sudo chown -R ubuntu:ubuntu /data/
-echo "<html>
-  <head>
-    </head>
-      <body>
-          Holberton School
-	    </body>
-	    </html>" > /data/web_static/releases/test/index.html
-
+echo "Holberton School" > /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test /data/web_static/current
-sudo chown -R ubuntu:ubuntu /data/
 
 sudo printf %s "server {
     listen 80;
@@ -26,6 +18,7 @@ sudo printf %s "server {
 
     root   /var/www/html;
     index  index.html index.htm;
+    rewrite ^/redirect_me https://www.youtube.com/@cryptotechcoder permanent;
 
     location /hbnb_static {
         alias /data/web_static/current;
@@ -39,5 +32,4 @@ sudo printf %s "server {
     }
 }" | sudo tee /etc/nginx/sites-available/default > /dev/null
 
-sudo nginx -s reload
 sudo service nginx restart
