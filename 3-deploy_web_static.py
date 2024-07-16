@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-""" fabric deployment with python """
-from fabric.api import run, put, local, env
-from datetime import datetime
+# Fabfile to create and distribute an archive to a web server.
 import os.path
+from datetime import datetime
+from fabric.api import env, local, put, run
 
 
 env.user = 'ubuntu'
 env.hosts = ['54.162.232.135', '18.234.249.5']
+
 
 def do_pack():
     """Create a tar gzipped archive of the directory web_static."""
